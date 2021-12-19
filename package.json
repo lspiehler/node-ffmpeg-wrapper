@@ -1,0 +1,23 @@
+{
+  "name": "node-ffmpeg-wrapper",
+  "version": "0.0.1",
+  "description": "Node.JS FFmpeg wrapper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lspiehler/node-ffmpeg-wrapper.git"
+  },
+  "keywords": [
+    "ffmpeg",
+    "ffprobe"
+  ],
+  "author": "Lyas Spiehler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lspiehler/node-ffmpeg-wrapper/issues"
+  },
+  "homepage": "https://github.com/lspiehler/node-ffmpeg-wrapper#readme"
+}
