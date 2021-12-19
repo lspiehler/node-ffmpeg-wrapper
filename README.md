@@ -16,7 +16,7 @@ npm install node-ffmpeg-wrapper
 ```
 const node_ffmpeg_wrapper = require('node-ffmpeg-wrapper');
 
-//no need to supply bindir if ffmpeg/ffprobe in in the system PATH
+//no need to supply bindir if ffmpeg/ffprobe is in the system PATH
 const ffmpeg = new node_ffmpeg_wrapper({bindir: 'C:/ffmpeg/bin'});
 
 //probe file to get streams and other details
