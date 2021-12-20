@@ -124,7 +124,7 @@ module.exports = function(options) {
 			if(err) {
 				callback(err, false, out.command);
 			} else {
-				callback(false, out.stdout.toString(), out.command);
+				callback(false, JSON.parse(out.stdout.toString()), out.command);
 			}
 		});
     }

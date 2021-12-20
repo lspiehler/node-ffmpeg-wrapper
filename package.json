@@ -1,6 +1,6 @@
 {
   "name": "node-ffmpeg-wrapper",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Node.JS FFmpeg wrapper",
   "main": "index.js",
   "scripts": {
