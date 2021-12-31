@@ -64,11 +64,13 @@ var binCommand = function() {
 
         command = normalizeCommand(params.cmd);
         if(params.hasOwnProperty('in')) {
-            for(let i = 0; i < params.in.length; i++) {
-                command.unshift(params.in);
+            for(let i = params.in.length - 1; i >= 0; i--) {
+                command.unshift(params.in[i]);
                 command.unshift('-i');
             }
         }
+
+        //console.log(command);
 
         if(params.hasOwnProperty('out')) {
             //for(let i = 0; i < params.in.length; i++) {
@@ -204,7 +206,9 @@ class encoder extends EventEmitter {
                 self.emit('error', err);
             } else {
                 let duration = inputs[0].probe.format.duration * 1000;
-                let cmd = ['-y -map 0:0 -map 0:1 -c:v:0 copy -c:a:0 aac -ac 2 -progress -'];
+                let cmd = ['-y'];
+                cmd.push(params.cmd);
+                cmd.push('-progress -');
                 self.command = new binCommand();
                 self.command.run({ cmd: cmd.join(' '), bin: bin, in: params.in, out: params.out},
                 function(stdout) {
