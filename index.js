@@ -70,7 +70,15 @@ var binCommand = function() {
             }
         }
 
+        if(params.preinputcmd) {
+            let precmd = normalizeCommand(params.preinputcmd);
+            for(let i = precmd.length - 1; i >= 0; i--) {
+                command.unshift(precmd[i]);
+            }
+        }
+
         //console.log(command);
+        //console.log(params);
 
         if(params.hasOwnProperty('out')) {
             //for(let i = 0; i < params.in.length; i++) {
@@ -210,7 +218,7 @@ class encoder extends EventEmitter {
                 cmd.push(params.cmd);
                 cmd.push('-progress -');
                 self.command = new binCommand();
-                self.command.run({ cmd: cmd.join(' '), bin: bin, in: params.in, out: params.out},
+                self.command.run({ preinputcmd: params.preinputcmd, cmd: cmd.join(' '), bin: bin, in: params.in, out: params.out},
                 function(stdout) {
                     /*if(index++ == 20) {
                         command.write('q');
